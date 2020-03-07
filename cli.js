@@ -20,6 +20,7 @@ const handleError = require('cli-handle-error');
 const welcome = require('cli-welcome');
 const chalk = require('chalk');
 const green = chalk.bold.green;
+const dim = chalk.dim;
 
 const cli = meow(
 	`
@@ -91,5 +92,11 @@ const cli = meow(
 		}
 	}
 
-	console.log();
+	console.log(
+		dim(
+			`\n${logSymbols.info} Tip: Try ${green(
+				`wp-continous-deployment`
+			)}\nhttps://github.com/ahmadawais/wp-continuous-deployment\n`
+		)
+	);
 })();
