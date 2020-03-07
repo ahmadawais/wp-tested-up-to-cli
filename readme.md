@@ -12,7 +12,7 @@
 ## Install
 
 ```sh
-npm install wp-tested-up-to-cli
+npx wp-tested-up-to-cli
 ```
 
 <br>
@@ -21,8 +21,22 @@ npm install wp-tested-up-to-cli
 
 ## Usage
 
-```js
-const wpTestedUpToCli = require('wp-tested-up-to-cli');
+```sh
+# Interactive mode: Asks questions.
+npx wp-tested-up-to-cli
+
+# Power mode: specify the flags and run in one go.
+
+# 1. Update the "Tested up to" version to the latest version of WordPress.
+npx wp-tested-up-to-cli --latest
+npx wp-tested-up-to-cli -l
+
+# 2. Set a custom version to as the "Tested up to" version (e.g. setting 5.4.0 before its release).
+npx wp-tested-up-to-cli --custom 5.4.0
+npx wp-tested-up-to-cli -c 5.4.0
+
+# Help/usage.
+npx wp-tested-up-to-cli --help
 ```
 
 <br>

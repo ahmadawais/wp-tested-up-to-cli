@@ -12,10 +12,13 @@ const cliA11y = require('cli-a11y');
 const logSymbols = require('log-symbols');
 const semverValid = require('semver/functions/valid');
 const promptClone = require('./utils/promptClone.js');
+const promptCustom = require('./utils/promptCustom.js');
 const printCurrentVersion = require('./utils/printCurrentVersion.js');
 const getCustomVersion = require('./utils/getCustomVersion.js');
 const setVersion = require('./utils/setVersion.js');
 const getWPVersion = require('./utils/getWPVersion.js');
+const updateNotifier = require('update-notifier');
+const pkgJSON = require('./package.json');
 const handleError = require('cli-handle-error');
 const welcome = require('cli-welcome');
 const chalk = require('chalk');
@@ -53,7 +56,21 @@ const cli = meow(
 );
 
 (async () => {
-	welcome(`WP Tested Up to CLI`, `by Awais.dev`);
+	welcome(
+		`wp-tested-up-to-cli`,
+		`by Awais.dev\n${dim(`Stargaze the repo for updates ↓\nhttps://github.com/ahmadawais/wp-tested-up-to-cli`)}`,
+		{
+			bgColor: `#d54e21`,
+			color: `#FFFFFF`,
+			bold: true,
+			clear: true,
+			version: `v${pkgJSON.version}`
+		}
+	);
+	updateNotifier({
+		pkg: pkgJSON,
+		shouldNotifyInNpmScript: true
+	}).notify({ isGlobal: true });
 	const latest = cli.flags.latest;
 	const customVersion = cli.flags.custom;
 

@@ -1,3 +1,4 @@
+const exitClone = require('./exitClone.js');
 const handleError = require('cli-handle-error');
 const shouldCancel = require('cli-should-cancel');
 const { Toggle } = require('enquirer');
