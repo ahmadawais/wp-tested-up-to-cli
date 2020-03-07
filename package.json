@@ -1,6 +1,6 @@
 {
 	"name": "wp-tested-up-to-cli",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Check and update WordPress Tested up to version.",
 	"license": "MIT",
 	"repository": "ahmadawais/wp-tested-up-to-cli",
