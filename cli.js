@@ -93,10 +93,8 @@ const cli = meow(
 	}
 
 	console.log(
-		dim(
-			`\n${logSymbols.info} Tip: Try ${green(
-				`wp-continous-deployment`
-			)}\nhttps://github.com/ahmadawais/wp-continuous-deployment\n`
-		)
+		`${logSymbols.success} ${green(`All done!`)}\n\n${logSymbols.info} ${dim(`Tip: Check out `)}${green(
+			`wp-continous-deployment`
+		)}\n${dim(`https://github.com/ahmadawais/wp-continuous-deployment`)}\n`
 	);
 })();
